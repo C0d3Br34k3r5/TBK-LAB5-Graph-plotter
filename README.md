@@ -51,7 +51,7 @@ Will generate output:
 python auto_graph.py -v 2 -f "s11_params.txt" -b -s "graph_vswr.png" -c cyan -t "Graph of antenna VSWR"
 ```
 Will generate output:
-![Generated output by optimal config](/images/graph_VSWR.png)
+![Generated output by optimal config](/images/graph_vswr.png)
 
 # Disclaimer
 
