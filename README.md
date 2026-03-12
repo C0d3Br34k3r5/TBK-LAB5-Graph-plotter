@@ -13,6 +13,11 @@
 
 **Files added in _data_ folder**
 + DRH20 antenna s11 params *(removed header)*: `s11_params.txt`
++ DRH20 antenna radiation pattern *(original export from LAB PC) (warning: Data does not meet expected characteristics)*: `E_plane_7_GHz.txt` and `H_plane_7_GHz.txt`
+
+**Possibly useful information:**
++ To get non-transparent PNG images, change in: `plt.savefig(print_path, dpi=500, bbox_inches='tight', transparent=True)` parameter `transparent` to `False`.
++ To view only graph, include only input file using argument `-f "PATH"` *(and add `-b` if debug print is not needed)*
 
 ## Plotter of |s11| and VSWR
 **Codename:**  `auto_graph.py`  
@@ -57,6 +62,49 @@ python auto_graph.py -v 2 -f "s11_params.txt" -b -s "graph_vswr.png" -c cyan -t 
 ```
 Will generate output:  
 ![Generated output by optimal config](/images/graph_vswr_nt.png)
+  
+## Plotter of antenna radiation pattern
+**Codename:**  `make_graph.py`  
+  
+**Required files:**
++ Table of amplitude params *(exported from measuring PC in TXT, including only measured values separated by spaces) (see attached version)*  
+
+**For help message use:**
+```
+python make_graph.py -h
+```
+Which will generate:
+
+```
+usage: make_graph.py [-h] -f FILE_PATH [-s PRINT_PATH] [-b] [-t TITLE] [-c COLOR]
+
+A script to plot graph of antenna radiation pattern from messy pile of numbers in *.txt from TBK; CTU FEE
+
+options:
+  -h, --help            show this help message and exit
+  -f, --f FILE_PATH     path to *.txt file obtained by script (obtained in LAB)
+  -s, --s PRINT_PATH    saves graph as image to PRINT_PATH, filename can be specified as *.png (default) or *.svg
+  -b, --b               blind mode, does not show loaded data and does not show graph after save, ignored if PRINT_PATH is not specified
+  -t, --t TITLE         title of plotted graph
+  -c, --c COLOR         set color of graph, use: 'blue','green','red','yellow','magenta', 'cyan', 'black' and 'white' or color names defined by CSS
+```
+**Minimal arguments example _(with save, disabling debug print)_:**
+```
+python make_graph.py -f "PATH_TO_AMPLITUDE_PARAMS" -s "PATH_TO_PRINT_DIRECTORY" -b
+```
+IRL:
+```
+python make_graph.py -b -f "E_plane_7_GHz.txt" -s "./"
+```
+Will generate output:  
+![Generated output by minimal config](/images/graph_E_plane_7_GHz_nt.png)
+
+**All arguments example _(recommended)_:**
+```
+python make_graph.py -b -f "H_plane_7_GHz.txt" -s "graph_H_plane.png" -c red -t "Graph of antenna radiation pattern in H plane"
+```
+Will generate output:  
+![Generated output by optimal config](/images/graph_H_plane_nt.png)
 
 # Disclaimer
 
