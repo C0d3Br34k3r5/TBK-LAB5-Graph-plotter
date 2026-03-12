@@ -18,6 +18,7 @@
 **Possibly useful information:**
 + To get non-transparent PNG images, change in: `plt.savefig(print_path, dpi=500, bbox_inches='tight', transparent=True)` parameter `transparent` to `False`.
 + To view only graph, include only input file using argument `-f "PATH"` *(and add `-b` if debug print is not needed)*
++ In `images` folder is `graph_H_plane.svg`, which includes manually drawed dimensions. You can download this image, change chart in the background and move lines, which quickens charts creation. Recommended software: [Inkscape](https://inkscape.org/)
 
 ## Plotter of |s11| and VSWR
 **Codename:**  `auto_graph.py`  
