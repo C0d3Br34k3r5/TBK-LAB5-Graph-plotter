@@ -11,7 +11,12 @@
 + SVG
 + NONE (view only)
 
+**Files added in _data_ folder**
++ DRH20 antenna s11 params *(removed header)*: `s11_params.txt`
+
 ## Plotter of |s11| and VSWR
+**Codename:**  `auto_graph.py`  
+  
 **Required files:**
 + Table of s11 params *(exported from VNA in TXT, with removed header, 3 columns in order FREQ – MAG – ANG) (see attached version)*  
 
