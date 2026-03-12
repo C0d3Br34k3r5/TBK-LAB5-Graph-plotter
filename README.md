@@ -43,15 +43,15 @@ IRL:
 ```
 python auto_graph.py -v 1 -f "s11_params.txt" -b -s "./"
 ```
-Will generate output:
-![Generated output by minimal config](/images/graph_s11_s11_params.png)
+Will generate output:  
+![Generated output by minimal config](/images/graph_s11_s11_params_nt.png)
 
 **All arguments example _(recommended)_:**
 ```
 python auto_graph.py -v 2 -f "s11_params.txt" -b -s "graph_vswr.png" -c cyan -t "Graph of antenna VSWR"
 ```
-Will generate output:
-![Generated output by optimal config](/images/graph_vswr.png)
+Will generate output:  
+![Generated output by optimal config](/images/graph_vswr_nt.png)
 
 # Disclaimer
 
