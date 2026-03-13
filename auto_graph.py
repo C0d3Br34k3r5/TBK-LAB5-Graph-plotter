@@ -106,7 +106,7 @@ if(not(len(freq) == len(mag) == len(ang))): #all data must be the same length, i
 
 length = len(freq)  #defines number of iterations for next steps
 for x in range(length): #values for |s11| and VSWR graphs calculator
-    mag_db.append(20*math.log(mag[x]))
+    mag_db.append(20*math.log10(mag[x]))
     psv.append((1+mag[x])/(1-mag[x]))
 for x in range(length): #frequency divider (from x*10^9 Hz to x GHz) + debug print of values
     freq[x] /= 1000000000
@@ -116,9 +116,9 @@ if(version_num==1): #graph settings for |s11|
     plt.plot(freq,mag_db,color)             #plot: x = frequency, y = magnitude in dB
     plt.title(title)                        #add title to plot
     plt.xticks(numpy.arange(0, 26.1, 2))    #set x axis ticks from 0 to 26 with step of 2 (0-2-4-...-26)
-    plt.yticks(numpy.linspace(-95,0,20))    #set y axis ticks from -95 to 0 with 20 steps
+    plt.yticks(numpy.linspace(-45,0,10))    #set y axis ticks from -45 to 0 with 10 steps
     plt.xlim(1,21)                          #set x axis range in chart from 1 to 21
-    plt.ylim(-95,2)                         #set y axis range in chart from -95 to 2
+    plt.ylim(-45,2)                         #set y axis range in chart from -45 to 2
     plt.xlabel("Frekvence/GHz")             #add x axis label
     plt.ylabel("|s11|/dB")                  #add y axis label
     plt.grid(True)                          #show grid in chart
@@ -128,7 +128,7 @@ elif(version_num==2):
     plt.xticks(numpy.arange(0, 26.1, 2))    #set x axis ticks from 0 to 26 with step of 2 (0-2-4-...-26)
     plt.yticks(numpy.linspace(1,2,11))      #set y axis ticks from -95 to 0 with 20 steps
     plt.xlim(1,21)                          #set x axis range in chart from 1 to 21
-    plt.ylim(1,2.05)                        #set y axis range in chart from -95 to 2
+    plt.ylim(1,2.05)                        #set y axis range in chart from 1 to 2
     plt.xlabel("Frekvence/GHz")             #add x axis label
     plt.ylabel("VSWR/-")                    #add y axis label
     plt.grid(True)                          #show grid in chart
@@ -143,5 +143,6 @@ if(print_path is not None):
 else:
     print("\033[33m   Info:\033[0m \033[93m\033[3mShowing graph.\033[0m")
     plt.show()
+
 
 print("\033[92mDONE\033[0m, all finished.")
