@@ -1,4 +1,10 @@
 # CVUT FEL TBK LAB5 Graph plotter
+
+> [!IMPORTANT]
+> Make sure you use version published after 9:22 AM, 3/13/2026.  
+> There was an hotfix of logarithm in `auto_graph.py`.  
+> *(picture in README will be fixed ASAP)*
+
 **Required packages:**
 + matplotlib
 + os
